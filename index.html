@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineSweeper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="initGame()">
+    <div class="main">
+        <div class="panel">
+            <div class="emoji" onclick="initGame()"></div>
+            <div class="score-display">Score: <span class="score"></span></div>
+            <div class="time-display">🕒 <span class="time">0</span></div>
+            <div class="live-display"><span class="live"></span></div>
+            <div class="flag-display">🚩 <span class="flag">0</span></div>
+            <div class="scores-btn" onclick="toggleScoreTable(this)">📈</div>
+        </div>
+        <div class="status"></div>
+        <div class="sidebar">
+            <button class="btn level btn-white" onclick="initGame(4,2,this)">Beginner</button>
+            <button class="btn level" onclick="initGame(8,12,this)">Medium</button>
+            <button class="btn level" onclick="initGame(12,30,this)">Expert</button>
+            <button class='btn sevenboom' onclick="setSevenBoomMode(this)">7 BOOM</button>
+            <button class="btn manualpos" onclick="setMinesPositions(this)">Manually position</button>
+        </div>
+        <div class="board-fx">
+            <table class="board"></table>
+        </div>
+        <table class="scores"></table>
+        <div class="gamecontrol">
+            <button class='btn game safeclick' onclick="safeClick(this)">Get safety click</button>
+            <button class='btn game hints' onclick="useHints(this)">Use hint</button>
+            <button class='btn game undo' onclick="undoMove(this)">Undo</button>
+        </div>
+        <div class="message">
+            <h1></h1>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/extra.js"></script>
+    <script src="js/utils.js"></script>
+</body>
+
+</html>
